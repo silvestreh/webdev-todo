@@ -5,9 +5,9 @@ const url = `${(global.location.protocol || 'http:')}//${global.location.hostnam
 
 export default {
     init() {
-        if (app.get('token')) {
-            this.$router.go('/');
-        }
+        app.authenticate()
+            .then(() => this.$router.go('/'))
+            .catch(() => this.$router.go('/auth'));
     },
 
     data() {

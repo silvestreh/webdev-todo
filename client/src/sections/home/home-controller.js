@@ -4,12 +4,6 @@ import task from 'components/task';
 import taskForm from 'components/task-form';
 
 export default {
-    init() {
-        if (!app.get('token')) {
-            this.$router.go('/auth');
-        }
-    },
-
     vuex: {
         getters: {
             tasks: state => state.tasks,
@@ -56,10 +50,14 @@ export default {
     },
 
     ready() {
-        this.fetchTasks();
-        this.watchCreated();
-        this.watchUpdated();
-        this.watchRemoved();
+        app.authenticate()
+            .then(() => {
+                this.fetchTasks();
+                this.watchCreated();
+                this.watchUpdated();
+                this.watchRemoved();
+            })
+            .catch(() => this.$router.go('/auth'));
     },
 
     methods: {
