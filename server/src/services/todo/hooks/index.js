@@ -11,7 +11,7 @@ exports.before = {
         auth.restrictToAuthenticated()
     ],
     find: [
-        auth.queryWithCurrentUser()
+        auth.queryWithCurrentUser({ idField: '_id', as: 'userId' })
     ],
     get: [
         auth.restrictToOwner()
@@ -20,10 +20,12 @@ exports.before = {
         auth.associateCurrentUser()
     ],
     update: [
-        auth.associateCurrentUser()
+        auth.associateCurrentUser(),
+        auth.restrictToOwner()
     ],
     patch: [
-        auth.associateCurrentUser()
+        auth.associateCurrentUser(),
+        auth.restrictToOwner()
     ],
     remove: [
         auth.restrictToOwner()
