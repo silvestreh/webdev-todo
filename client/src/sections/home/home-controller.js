@@ -18,6 +18,7 @@ export default {
         },
         sortBy: global.localStorage.getItem('sortBy') || 'date',
         showOptions: false,
+        loading: false,
     }),
 
     computed: {
@@ -50,9 +51,12 @@ export default {
     },
 
     ready() {
+        this.loading = true;
         app.authenticate()
             .then(() => {
-                this.fetchTasks();
+                this.fetchTasks(() => {
+                    this.loading = false;
+                });
                 this.watchCreated();
                 this.watchUpdated();
                 this.watchRemoved();

@@ -7,7 +7,6 @@ export default {
     init() {
         app.authenticate()
             .then(() => this.$router.go('/'))
-            .catch(() => this.$router.go('/auth'));
     },
 
     data() {

@@ -1,8 +1,9 @@
 import { todoService, } from 'src/services';
 
-export const fetchTasks = ({ dispatch, }) => {
+export const fetchTasks = ({ dispatch, }, cb) => {
     todoService.find().then((tasks) => {
         dispatch('FETCH_TASKS', tasks.data);
+        if (cb && typeof cb === 'function') cb();
     });
 };
 

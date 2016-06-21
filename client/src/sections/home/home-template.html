@@ -12,7 +12,8 @@
     </h1>
     <task-form :data="newTask" :visible="true"></task-form>
     <div class="tasks">
-        <img v-if="!tasks.length" src="/static/images/nothing-to-do.png">
+        <img class="spinner" v-if="loading" src="/static/svg/spinner.svg">
+        <img v-if="!tasks.length && !loading" src="/static/images/nothing-to-do.png">
         <p v-if="!todos.length && tasks.length">All done!</p>
         <task v-for="task in todos" :data="task"></task>
         <task v-for="task in completed" :data="task"></task>
