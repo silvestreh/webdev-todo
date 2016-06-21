@@ -14,21 +14,21 @@ exports.before = {
         auth.queryWithCurrentUser({ idField: '_id', as: 'userId' })
     ],
     get: [
-        auth.restrictToOwner()
+        auth.restrictToOwner({ idField: '_id', ownerField: 'userId' })
     ],
     create: [
-        auth.associateCurrentUser()
+        auth.associateCurrentUser({ idField: '_id', as: 'userId' })
     ],
     update: [
-        auth.associateCurrentUser(),
-        auth.restrictToOwner()
+        auth.associateCurrentUser({ idField: '_id', as: 'userId' }),
+        auth.restrictToOwner({ idField: '_id', ownerField: 'userId' })
     ],
     patch: [
-        auth.associateCurrentUser(),
-        auth.restrictToOwner()
+        auth.associateCurrentUser({ idField: '_id', as: 'userId' }),
+        auth.restrictToOwner({ idField: '_id', ownerField: 'userId' })
     ],
     remove: [
-        auth.restrictToOwner()
+        auth.restrictToOwner({ idField: '_id', ownerField: 'userId' })
     ]
 };
 
