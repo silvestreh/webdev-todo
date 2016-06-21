@@ -1,0 +1,20 @@
+<section>
+    <h1>
+        Tasks
+        <a href="#" class="action" @click.prevent="logOut"><img src="/static/svg/exit.svg"></a>
+        <div class="action">
+            <a href="#" @click.prevent="toggleOptions" @blur="hideOptions"><img src="/static/svg/settings.svg"></a>
+            <ul class="contextMenu" v-if="showOptions" transition="expand">
+                <li class="contextMenu__item" :class="{ 'contextMenu__item--selected': sortBy === 'date' }"><a href="#" @click.prevent="sort('date')">Sort by date</a></li>
+                <li class="contextMenu__item" :class="{ 'contextMenu__item--selected': sortBy === 'priority' }"><a href="#" @click.prevent="sort('priority')">Sort by priority</a></li>
+            </ul>
+        </div>
+    </h1>
+    <task-form :data="newTask" :visible="true"></task-form>
+    <div class="tasks">
+        <img v-if="!tasks.length" src="/static/images/nothing-to-do.png">
+        <p v-if="!todos.length && tasks.length">All done!</p>
+        <task v-for="task in todos" :data="task"></task>
+        <task v-for="task in completed" :data="task"></task>
+    </div>
+</section>

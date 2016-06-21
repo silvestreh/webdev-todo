@@ -1,0 +1,32 @@
+@import 'src/stylesheets/modules/colors';
+@import 'src/stylesheets/modules/mixins';
+
+form {
+    margin: 2rem auto;
+
+    @include desktop {
+        background: white;
+        border-radius: 0.25rem;
+        padding: 2rem;
+        max-width: 30rem;
+        box-shadow: 0 0.0625rem 1rem rgba(0, 0, 0, 0.05);
+    }
+
+    @include tablet {
+        background: white;
+        border-radius: 0.25rem;
+        padding: 2rem;
+        max-width: 80%;
+        box-shadow: 0 0.0625rem 1rem rgba(0, 0, 0, 0.05);
+    }
+
+    a + button,
+    button + a {
+        margin-left: 1rem;
+    }
+
+    a {
+        color: $color-text;
+        text-decoration: none;
+    }
+}

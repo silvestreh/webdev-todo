@@ -1,0 +1,18 @@
+<form v-if="visible" class="taskForm" :class="{ 'taskForm--isNewTask': !edit }">
+    <ul>
+        <li><input autofocus type="text" v-model="data.task" @keyup.esc="hide" placeholder="Task name…"></li>
+        <li>
+            <select v-model="data.priority">
+                <option value="low">Low priority</option>
+                <option value="medium">Medium priority</option>
+                <option value="high">High priority</option>
+            </select>
+        </li>
+        <li>
+            <button v-if="!edit" :disabled="!data.task.trim()" class="success" @click.prevent="create">Add</button>
+            <button v-if="edit" :disabled="!data.task.trim()" class="success" @click.prevent="update">Save</button>
+            <button v-if="edit" class="danger" @click.prevent="remove">Remove</button>
+            <button v-if="edit" @click.prevent="hide">Cancel</button>
+        </li>
+    </ul>
+</form>

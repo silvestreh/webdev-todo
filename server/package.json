@@ -1,0 +1,52 @@
+{
+  "name": "webdev-todo-server",
+  "description": "A To-Do app for /r/webdev&#39;s weekly projects",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "src/",
+  "keywords": [
+    "feathers"
+  ],
+  "license": "MIT",
+  "repository": {},
+  "author": "Silvestre Herrera <silvestre.herrera@gmail.com>",
+  "contributors": [],
+  "bugs": {},
+  "engines": {
+    "node": ">= 0.12.0"
+  },
+  "scripts": {
+    "start": "node src/",
+    "test": "npm run jshint && npm run mocha",
+    "jshint": "jshint src/. test/. --config",
+    "dev": "cross-env DEBUG=feathers* nodemon src/",
+    "mocha": "mocha test/ --recursive"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "compression": "^1.6.2",
+    "cors": "^2.7.1",
+    "feathers": "^2.0.1",
+    "feathers-authentication": "^0.7.8",
+    "feathers-configuration": "^0.2.3",
+    "feathers-errors": "^2.2.0",
+    "feathers-hooks": "^1.5.4",
+    "feathers-mailgun": "^0.1.2",
+    "feathers-mongoose": "^3.4.0",
+    "feathers-rest": "^1.4.2",
+    "feathers-socketio": "^1.4.1",
+    "mailgun-js": "^0.7.11",
+    "mongoose": "^4.5.0",
+    "passport": "^0.3.2",
+    "serve-favicon": "^2.3.0",
+    "validator": "^5.4.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^1.0.8",
+    "jshint": "^2.9.2",
+    "mocha": "^2.5.3",
+    "nodemon": "^1.9.2",
+    "request": "^2.72.0"
+  }
+}

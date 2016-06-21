@@ -1,0 +1,49 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
+
+// Vendor
+@import '~normalize.css';
+@import '~toastr/toastr';
+
+// Modules
+@import 'modules/colors';
+@import 'modules/mixins';
+
+// Static components
+@import 'components/buttons';
+@import 'components/context-menu';
+@import 'components/forms';
+@import 'components/switch';
+
+:root {
+    font-size: 16px;
+    cursor: default;
+}
+
+body {
+    background: #FAFAFA;
+    color: $color-text;
+    font: {
+        family: 'Roboto';
+        size: 1rem;
+    }
+}
+
+h1 {
+    font: {
+        size: 3rem;
+        weight: 100;
+    }
+}
+
+#app {
+    > section {
+        padding: 0 1rem;
+        box-sizing: border-box;
+
+        @include desktop {
+            max-width: 42rem;
+            margin: auto;
+        }
+    }
+}

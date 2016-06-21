@@ -1,0 +1,42 @@
+@import 'src/stylesheets/modules/colors';
+
+.switch {
+    font-size: 0;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 1rem auto;
+
+    li {
+        font-size: 1rem;
+        display: inline-block;
+
+        &:first-child a {
+            border-radius: 0.25em 0 0 0.25em;
+        }
+
+        &:last-child a {
+            border-radius: 0 0.25em 0.25em 0;
+        }
+
+        + li a {
+            border-left: none;
+        }
+    }
+
+    a {
+        display: block;
+        padding: 0 1em;
+        line-height: 3em;
+        border: 0.0625em solid rgba(0, 0, 0, 0.1);
+        color: $color-text;
+        text-decoration: none;
+        outline: none;
+        background-color: white;
+    }
+
+    .active a {
+        background-color: $color-main;
+        color: white;
+    }
+}

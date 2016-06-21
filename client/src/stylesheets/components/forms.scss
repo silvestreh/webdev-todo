@@ -1,0 +1,67 @@
+@import 'src/stylesheets/modules/colors';
+
+form ul {
+    padding: 0;
+    list-style: none;
+
+    input:not([type="checkbox"]):not([type="radio"]) {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    li + li {
+        margin-top: 1rem;
+    }
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    float: left;
+    clear: both;
+    margin: 0 0 1.5rem;
+    color: $color-main;
+    font: {
+        size: 2rem;
+        weight: 300;
+    }
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select {
+    appearance: none;
+    line-height: 2.5rem;
+    padding: 0 1rem;
+    outline: none;
+    background-color: white;
+    box-sizing: border-box;
+    transition: border 250ms;
+    color: $color-text;
+    border: {
+        width: 0.0625rem;
+        style: solid;
+        color: #DDD;
+        radius: 0.25rem;
+    }
+
+    &:focus {
+        border-color: $status-info;
+    }
+}
+
+select {
+    cursor: pointer;
+    background: {
+        image: url('/static/svg/chevron-down.svg');
+        repeat: no-repeat;
+        position: calc(100% - 0.5rem) center;
+        size: 1.25rem;
+    }
+}
+
+label {
+    user-select: none;
+}

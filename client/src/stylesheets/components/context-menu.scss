@@ -1,0 +1,62 @@
+.contextMenu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+    background: white;
+    border-radius: 0.125rem;
+    box-shadow: 0 0.0625rem 0.25rem rgba(0,0,0,0.2);
+    z-index: 999;
+    font-weight: 400;
+    
+    a {
+        display: block;
+        white-space: nowrap;
+        max-width: 15rem;
+        padding: 0 1rem 0 2.5rem;
+        line-height: 3rem;
+        color: $color-text;
+        text: {
+            decoration: none;
+            overflow: ellipsis;
+        }
+
+        &:hover {
+            background-color: lighten($status-info, 48%);
+        }
+    }
+
+    &__item--selected a {
+        background: {
+            image: url('/static/svg/check.svg');
+            repeat: no-repeat;
+            position: 0.75rem center;
+            size: 1rem;
+        }
+    }
+
+    li:first-child a {
+        border-radius: 0.125rem 0.125rem 0 0;
+    }
+
+    li:last-child a {
+        border-radius: 0 0 0.125rem 0.125rem;
+    }
+
+    li:only-child a {
+        border-radius: 0.125rem;
+    }
+}
+
+.expand-transition {
+    transition: transform 125ms;
+    transform: scale(1);
+    transform-origin: calc(100% - 0.5rem) 1rem;
+}
+
+.expand-enter, .expand-leave {
+    transform: scale(0);
+}

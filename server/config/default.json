@@ -1,0 +1,17 @@
+{
+    "host": "localhost",
+    "port": 3030,
+    "mongodb": "mongodb://localhost:27017/webdevTodoServer",
+    "public": "../public/",
+    "auth": {
+        "token": {
+            "secret": "1DKVH0MCc5q3Gi5TtzhgzmKjXsxfVoIiOpFzRcOC0VNGkhs7m2UMwlFldRRhz5KgBV3m03Lk92zugfoU77TkWA=="
+        },
+        "local": {},
+        "idField": "_id"
+    },
+    "mailgun": {
+        "apiKey": "",
+        "domain": ""
+    }
+}

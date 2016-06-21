@@ -1,0 +1,14 @@
+@import 'src/stylesheets/modules/colors';
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+a {
+    color: $color-main;
+    text-decoration: none;
+}

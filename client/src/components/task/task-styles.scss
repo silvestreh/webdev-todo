@@ -1,0 +1,109 @@
+@import 'src/stylesheets/modules/colors';
+@import 'src/stylesheets/modules/mixins';
+
+.task {
+    line-height: 3.5rem;
+    padding: 0 1rem;
+    background-color: white;
+    border-left: 0.25rem solid #F0F0F0;
+
+    + .task {
+        border-top: 0.0625rem solid #F2F2F2; 
+    }
+
+    &:first-child {
+        border-radius: 0.25rem 0.25rem 0 0;
+    }
+
+    &:last-child {
+        border-radius: 0 0 0.25rem 0.25rem;
+    }
+
+    &:nth-last-of-type(even) {
+        background-color: #FAFAFA;
+    }
+
+    &--medium {
+        border-left-color: $status-warning;
+    }
+
+    &--high {
+        border-left-color: $status-error;
+    }
+
+    span {
+        display: inline-block;
+        cursor: pointer;
+
+        @include desktop {
+            transform: translateX(-2rem);
+            transition: transform 250ms;
+        }
+    }
+
+    &--completed {
+        span {
+            text-decoration: line-through;
+            color: lighten($color-text, 30%);
+            font: {
+                weight: 300;
+                style: italic;
+            }
+        }
+    }
+
+    &--completed, &:hover {
+        span {
+            @include desktop {
+                transform: translateX(0);
+            }
+        }
+
+        .task__completeButton {
+            @include desktop {
+                transform: scale(1);
+            }
+        }
+    }
+
+    &__completeButton {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: -0.125rem;
+        margin-right: 0.5rem;
+
+        @include desktop {
+            transform: scale(0);
+            transition: transform 250ms;
+        }
+    }
+
+    &__editButton,
+    &__removeButton {
+        text-decoration: none;
+        color: $color-text;
+        float: right;
+        font-size: 1.25rem;
+        margin-left: 1.5rem;
+        transition: opacity 250ms, transform 250ms;
+
+        @include desktop {
+            opacity: 0;
+            transform: translateX(1rem);
+        }
+    }
+
+    &__removeButton {
+        color: $color-main;
+    }
+
+    &:hover &__editButton,
+    &:hover &__removeButton {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+input[type="checkbox"] {
+    margin-right: 0.75rem;
+}

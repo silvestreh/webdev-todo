@@ -1,0 +1,11 @@
+<div class="task" :class="['task--' + data.priority, { 'task--completed': data.completed }]">
+    <div v-if="!edit">
+        <a class="task__completeButton" href="#" @click.prevent="toggleComplete">
+            <img src="/static/svg/check.svg">
+        </a>
+        <span @click.prevent="toggleComplete">{{ data.task }}</span>
+        <a class="task__removeButton" href="#" @click.prevent="remove">&#x2715;</a>
+        <a class="task__editButton" href="#" @click.prevent="showForm">&#x270e;</a>
+    </div>
+    <task-form :visible="edit" :data="data" :edit="true"></task-form>
+</div>
