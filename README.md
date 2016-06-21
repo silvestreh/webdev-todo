@@ -13,6 +13,8 @@ npm install
 npm run build # build the client
 ```
 
+Remember to open `server/config/default.json` and enter your Mailgun API key and Domain. 
+
 ## Starting the app
 
 If you built the client, then all you need to do is start the feathers server:
