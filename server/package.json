@@ -19,7 +19,7 @@
     "start": "node src/",
     "test": "npm run jshint && npm run mocha",
     "jshint": "jshint src/. test/. --config",
-    "dev": "cross-env DEBUG=feathers* nodemon src/",
+    "dev": "nodemon src/",
     "mocha": "mocha test/ --recursive"
   },
   "dependencies": {

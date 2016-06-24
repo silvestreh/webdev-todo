@@ -29,6 +29,7 @@
     "vuex": "^0.6.3"
   },
   "devDependencies": {
+    "animate.css": "^3.5.1",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
     "babel-plugin-transform-runtime": "^6.0.0",

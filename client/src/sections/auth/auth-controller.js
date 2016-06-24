@@ -1,4 +1,5 @@
-import { app, userService, } from 'src/services';
+import { app, } from 'src/feathers/app';
+import { userService, } from 'src/feathers/services';
 import toastr from 'toastr';
 
 const url = `${(global.location.protocol || 'http:')}//${global.location.hostname}:3030`;

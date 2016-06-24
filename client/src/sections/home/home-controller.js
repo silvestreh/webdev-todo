@@ -1,5 +1,5 @@
 import * as actions from 'src/vuex/actions';
-import { app, } from 'src/services';
+import { app, } from 'src/feathers/app';
 import task from 'components/task';
 import taskForm from 'components/task-form';
 

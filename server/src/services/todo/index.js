@@ -26,4 +26,11 @@ module.exports = function () {
 
     // Set up our after hooks
     todoService.after(hooks.after);
+
+    // Filter TO-DOs so other users can't see everyone's tasks
+    todoService.filter((todo, connection) => {
+        if (todo.userId.toString() === connection.user._id.toString()) {
+            return todo;
+        }
+    });
 };

@@ -1,4 +1,4 @@
-import { todoService, } from 'src/services';
+import { todoService, } from 'src/feathers/services';
 
 export default {
     props: [
