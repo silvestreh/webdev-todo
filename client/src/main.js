@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './app.vue';
+import Main from './app.vue';
 import routes from 'router/routes-map';
+import { authHook, } from 'router/hooks';
 import Resource from 'vue-resource';
 
 Vue.use(VueRouter);
@@ -10,5 +11,5 @@ Vue.use(Resource);
 const router = new VueRouter();
 
 router.map(routes);
-
-router.start(App, '#app');
+router.beforeEach(authHook);
+router.start(Main, '#app');

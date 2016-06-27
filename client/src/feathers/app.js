@@ -6,9 +6,11 @@ import io from 'socket.io-client';
 
 const socket = io(`${(location.protocol || 'http:')}//${location.hostname}:3030`);
 
-export const app = feathers()
+const app = feathers()
     .configure(hooks())
     .configure(socketio(socket))
     .configure(authentication({
         storage: global.localStorage,
     }));
+
+export default app;

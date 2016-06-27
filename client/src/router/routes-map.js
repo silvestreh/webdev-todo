@@ -12,6 +12,7 @@ export default {
     },
     '/': {
         component: home,
+        auth: true,
     },
     '/reset': {
         component: resetPassword,

@@ -1,5 +1,5 @@
 import * as actions from 'src/vuex/actions';
-import { app, } from 'src/feathers/app';
+import app from 'src/feathers/app';
 import task from 'components/task';
 import taskForm from 'components/task-form';
 
@@ -52,16 +52,12 @@ export default {
 
     ready() {
         this.loading = true;
-        app.authenticate()
-            .then(() => {
-                this.fetchTasks(() => {
-                    this.loading = false;
-                });
-                this.watchCreated();
-                this.watchUpdated();
-                this.watchRemoved();
-            })
-            .catch(() => this.$router.go('/auth'));
+        this.fetchTasks(() => {
+            this.loading = false;
+        });
+        this.watchCreated();
+        this.watchUpdated();
+        this.watchRemoved();
     },
 
     methods: {

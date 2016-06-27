@@ -1,4 +1,4 @@
-import { app, } from 'src/feathers/app';
+import app from 'src/feathers/app';
 import { userService, } from 'src/feathers/services';
 import toastr from 'toastr';
 
@@ -6,8 +6,7 @@ const url = `${(global.location.protocol || 'http:')}//${global.location.hostnam
 
 export default {
     init() {
-        app.authenticate()
-            .then(() => this.$router.go('/'))
+        if (app.get('token')) this.$router.go('/');
     },
 
     data() {
