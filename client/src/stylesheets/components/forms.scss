@@ -50,6 +50,10 @@ select {
     &:focus {
         border-color: $status-info;
     }
+
+    &.is-invalid, &:invalid {
+        border-color: $status-error;
+    }
 }
 
 select {

@@ -30,3 +30,14 @@ form {
         text-decoration: none;
     }
 }
+
+strong {
+    float: right;
+    color: $status-error;
+    font-size: 0.75em;
+
+    + strong::after {
+        content: ',';
+        margin-right: 0.5em;
+    }
+}

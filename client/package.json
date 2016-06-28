@@ -23,6 +23,7 @@
     "lodash": "^4.13.1",
     "socket.io-client": "^1.4.6",
     "toastr": "^2.1.2",
+    "validator": "^5.4.0",
     "vue": "^1.0.21",
     "vue-resource": "^0.8.0",
     "vue-router": "^0.7.13",

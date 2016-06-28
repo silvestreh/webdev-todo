@@ -1,6 +1,7 @@
 import app from 'src/feathers/app';
 import { userService, } from 'src/feathers/services';
 import toastr from 'toastr';
+import validator from 'validator';
 
 const url = `${(global.location.protocol || 'http:')}//${global.location.hostname}:3030`;
 
@@ -18,8 +19,11 @@ export default {
     },
 
     computed: {
+        validEmail() {
+            return validator.isEmail(this.email);
+        },
         validPassword() {
-            return this.password.length > 8 || false;
+            return this.password.length >= 8 || false;
         },
     },
 

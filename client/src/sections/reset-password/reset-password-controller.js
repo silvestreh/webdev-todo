@@ -16,7 +16,7 @@ export default {
 
     computed: {
         validPassword() {
-            return this.password.length > 8 && (this.password === this.repassword) || false;
+            return this.password.length >= 8 && (this.password === this.repassword) || false;
         },
     },
 
@@ -24,6 +24,7 @@ export default {
         changePassword() {
             const data = {
                 password: this.password,
+                repassword: this.repassword,
                 resetPwdToken: this.$route.query.token,
             };
 
