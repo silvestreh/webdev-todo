@@ -6,7 +6,7 @@ export const authHook = (transition) => {
             .then(() => {
                 transition.next();
             })
-            .catch(() => transition.redirect('/auth'));
+            .catch(() => transition.redirect('/login'));
     } else {
         transition.next();
     }

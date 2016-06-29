@@ -69,7 +69,7 @@ export default {
 
         logOut() {
             app.logout();
-            this.$router.go('/auth');
+            this.$router.go('/login');
         },
 
         toggleOptions() {

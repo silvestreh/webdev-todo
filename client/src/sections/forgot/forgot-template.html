@@ -1,0 +1,15 @@
+<section>
+    <auth-menu></auth-menu>
+
+    <form class="auth">
+        <fieldset>
+            <legend>Reset your password</legend>
+            <ul>
+                <li><input autofocus type="email" placeholder="E-mail" v-model="email" :class="{ 'is-invalid': !validEmail && email }"></li>
+            </ul>
+            <a href="#" v-link="{ path: '/login'} ">&#x27ea;</a>
+            <button class="key" @click.prevent="resetPasswd" :disabled="!validEmail">Reset</button>
+            <strong v-if="!validEmail && email">Invalid E-mail</strong>
+        </fieldset>
+    </form>
+</section>

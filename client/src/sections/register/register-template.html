@@ -1,0 +1,16 @@
+<section>
+    <auth-menu></auth-menu>
+
+    <form class="auth">
+        <fieldset>
+            <legend>Register</legend>
+            <ul>
+                <li><input autofocus type="email" placeholder="E-mail" v-model="email" :class="{ 'is-invalid': !validEmail && email }"></li>
+                <li><input type="password" placeholder="Password (at least 8 characters)" v-model="password" :class="{ 'is-invalid': !validPassword && password}" pattern=".{8,}"></li>
+            </ul>
+            <button class="key" @click.prevent="signUp" :disabled="!validPassword">Register</button>
+            <strong v-if="!validPassword && password">Password is too short</strong>
+            <strong v-if="!validEmail && email">Invalid E-mail</strong>
+        </fieldset>
+    </form>
+</section>

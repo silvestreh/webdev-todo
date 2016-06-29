@@ -1,0 +1,6 @@
+@import 'src/stylesheets/modules/colors';
+
+.switch .v-link-active {
+    color: white;
+    background-color: $color-main;
+}

@@ -1,0 +1,15 @@
+<section>
+    <auth-menu></auth-menu>
+
+    <form class="auth">
+        <fieldset>
+            <legend>Sign in</legend>
+            <ul>
+                <li><input autofocus  type="email" placeholder="E-mail" v-model="email"></li>
+                <li><input type="password" placeholder="Password" v-model="password"></li>
+            </ul>
+            <button class="key" @click.prevent="signIn">Sign in</button>
+            <a href="#" v-link="{ path: '/forgot' }">I forgot my password</a>
+        </fieldset>
+    </form>
+</section>
