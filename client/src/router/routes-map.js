@@ -1,5 +1,5 @@
 import forgot from 'sections/forgot';
-import home from 'sections/home';
+import app from 'sections/app';
 import notFound from 'sections/not-found';
 import register from 'sections/register';
 import resetPassword from 'sections/reset-password';
@@ -10,7 +10,7 @@ export default {
         component: notFound,
     },
     '/app': {
-        component: home,
+        component: app,
         auth: true,
     },
     '/forgot': {
